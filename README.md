@@ -1,0 +1,2 @@
+# TestCalc
+Kata Test Project
