@@ -41,11 +41,13 @@ public class Main {
                                           return Integer.toString(doMath(Integer.parseInt(splittedInput[0]),
                                                                          Integer.parseInt(splittedInput[2]),
                                                                          splittedInput[1]));
-                                      } else {
+                                      } else if (doMath(romanInput.get(splittedInput[0]).intValue(),
+                                                        romanInput.get(splittedInput[2]).intValue(),
+                                                        splittedInput[1]) > 0){
                                           return intToRoman(doMath(romanInput.get(splittedInput[0]).intValue(),
                                                                        romanInput.get(splittedInput[2]).intValue(),
                                                                        splittedInput[1]));
-                                      }
+                                      } else {throw new InvalidInputException();}
                                   } else {throw new InvalidInputException();}
     }
     
@@ -127,4 +129,4 @@ public class Main {
     static class InvalidInputException extends Exception{}
     static class OutOfRangeException extends Exception{}
     static class InvalidOperationException extends Exception{}
-                                    }
+        }
